@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma:migrate": "npx prisma migrate deploy",
+    "prestart:prod": "npm run prisma:migrate && npm run build",
+    "start:prod": "cross-env PORT=8000 next start",
+    "prod": "npm run prestart:prod && npm run start:prod"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.4.1",
