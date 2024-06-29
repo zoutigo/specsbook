@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prisma:migrate": "npx prisma migrate deploy",
-    "prestart:prod": "npm run prisma:migrate && npm run build",
+    "prestart:prod": "npm run prisma:migrate && npm install && npm run build",
     "start:prod": "cross-env PORT=8000 npm run start",
     "prod": "npm run prestart:prod && npm run start:prod"
   },
